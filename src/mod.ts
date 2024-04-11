@@ -25,7 +25,7 @@ class Mod implements IPreAkiLoadMod
 
         //parse the config and store the values
         this.modConfig = container.resolve<ConfigUtil>("PPEConfigUtil").parseModConfig();
-        if ( this.modConfig.shutErDown ) defaultLogger.log("PoorPlannersEscape: The mod is disabled", LogTextColor.RED);
+        if ( this.modConfig.shutErDown ) defaultLogger.log("PoorPlannersEscape: The mod is disabled due to shutErDown being true.", LogTextColor.RED);
 
         const inraidController = container.resolve<InraidController>("InraidController");
         container.afterResolution("InraidController", (_t, result: InraidController) => 
