@@ -11,7 +11,7 @@ import path from "path";
 export class ConfigUtil
 {
     constructor(
-        @inject("LoggingUtil") private loggingUtil: LoggingUtil
+        @inject("PPELoggingUtil") private loggingUtil: LoggingUtil
     )
     {}
 
@@ -27,7 +27,7 @@ export class ConfigUtil
         } 
         catch (error) 
         {
-            this.loggingUtil.error("PoorPlannersEscape: There was an issue parsing the config. The mod will default to being enabled.");
+            this.loggingUtil.error("There was an issue parsing the config. The mod will default to being enabled.");
             return new ModConfig(false);
         }
 

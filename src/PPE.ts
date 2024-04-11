@@ -9,7 +9,7 @@ export class PPE
 {
 
     constructor(
-        @inject("LoggingUtil") private loggingUtil: LoggingUtil
+        @inject("PPELoggingUtil") private loggingUtil: LoggingUtil
     ) 
     {
     }
@@ -19,7 +19,7 @@ export class PPE
         if (info.exit === PlayerRaidEndState.LEFT && !info.isPlayerScav)
         {
             info.exit = PlayerRaidEndState.RUNNER;
-            this.loggingUtil.green("PoorPlannersEscape: you're a runner, you're a trackstar. Now you can go punish that toilet.");
+            this.loggingUtil.green("You're a runner, you're a trackstar. Now you can go punish that toilet.");
         }
     }
 

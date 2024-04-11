@@ -20,11 +20,11 @@ class Mod implements IPreAkiLoadMod
         const defaultLogger = container.resolve<ILogger>("WinstonLogger");
 
         container.register<PPE>("PPE", PPE, {lifecycle: Lifecycle.Singleton});
-        container.register<ConfigUtil>("ConfigUtil", ConfigUtil, {lifecycle: Lifecycle.Singleton});
-        container.register<LoggingUtil>("LoggingUtil", LoggingUtil, {lifecycle: Lifecycle.Singleton});
+        container.register<ConfigUtil>("PPEConfigUtil", ConfigUtil, {lifecycle: Lifecycle.Singleton});
+        container.register<LoggingUtil>("PPELoggingUtil", LoggingUtil, {lifecycle: Lifecycle.Singleton});
 
         //parse the config and store the values
-        this.modConfig = container.resolve<ConfigUtil>("ConfigUtil").parseModConfig();
+        this.modConfig = container.resolve<ConfigUtil>("PPEConfigUtil").parseModConfig();
         if ( this.modConfig.shutErDown ) defaultLogger.log("PoorPlannersEscape: The mod is disabled", LogTextColor.RED);
 
         const inraidController = container.resolve<InraidController>("InraidController");
