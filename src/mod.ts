@@ -1,7 +1,7 @@
-import { DependencyContainer, Lifecycle } from "tsyringe";
-
 import { IPreAkiLoadMod } from "@spt-aki/models/external/IPreAkiLoadMod";
 import { InraidController } from "@spt-aki/controllers/InRaidController";
+
+import { DependencyContainer, Lifecycle } from "tsyringe";
 import { PPE } from "./PPE";
 
 class Mod implements IPreAkiLoadMod
